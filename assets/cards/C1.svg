@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <clipPath id="frame">
+      <rect x="22" y="22" width="756" height="556" rx="24"/>
+    </clipPath>
+    <clipPath id="water">
+      <path d="M353 280H460L695 578H104Z"/>
+    </clipPath>
+    <g id="window">
+      <path d="M0 32V11C0-4 24-4 24 11V32Z" fill="#f7ca84"/>
+      <path d="M12 0V32M0 15H24" fill="none" stroke="#694c60" stroke-width="3"/>
+      <path d="M-3 34H27" stroke="#e3a285" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g id="lantern">
+      <path d="M0-25V-16" stroke="#403b56" stroke-width="2"/>
+      <path d="M-7-16H7L10-11H-10Z" fill="#403b56"/>
+      <path d="M-10-11Q-16 0-10 14Q0 20 10 14Q16 0 10-11Z" fill="#f7b56f"/>
+      <path d="M-5-10Q-9 2-5 14H5Q9 2 5-10Z" fill="#ffe0a0"/>
+      <path d="M-10-10H10M-10 14H10" stroke="#c77962" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-6 18H6M0 18V24" stroke="#403b56" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g id="boat">
+      <path d="M-55 0L0-35L49 0Z" fill="#fff1cc"/>
+      <path d="M0-35L-7 0H49Z" fill="#eac9a6"/>
+      <path d="M-55 0L-25 27H28L57 0L0 11Z" fill="#fff6dc"/>
+      <path d="M-55 0L0 11L-25 27Z" fill="#e9b399"/>
+      <path d="M0 11L57 0L28 27Z" fill="#f7d5ad"/>
+      <path d="M0-35L0 11" stroke="#d9ad94" stroke-width="1.5"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="600" fill="#f4e6ce"/>
+  <g clip-path="url(#frame)">
+    <rect x="22" y="22" width="756" height="556" fill="#393d60"/>
+    <path d="M22 158Q213 128 404 157T778 137V313H22Z" fill="#75627b"/>
+    <path d="M22 208Q212 161 405 189T778 187V320H22Z" fill="#c18a92"/>
+    <circle cx="464" cy="97" r="32" fill="#f9d7a0"/>
+    <circle cx="476" cy="85" r="29" fill="#393d60"/>
+    <g fill="#eec7a0">
+      <circle cx="304" cy="65" r="2"/>
+      <circle cx="391" cy="112" r="1.8"/>
+      <circle cx="553" cy="58" r="2.2"/>
+      <circle cx="613" cy="112" r="1.7"/>
+      <circle cx="208" cy="81" r="1.7"/>
+      <path d="M348 116L350 122L356 124L350 126L348 132L346 126L340 124L346 122Z"/>
+      <path d="M566 145L568 150L573 152L568 154L566 159L564 154L559 152L564 150Z"/>
+    </g>
+    <g fill="#e1a2a0">
+      <path d="M296 168Q308 156 320 168Q335 157 353 168Z"/>
+      <path d="M480 182Q496 167 511 179Q529 169 546 182Z"/>
+    </g>
+
+    <!-- The distant waterside -->
+    <path d="M242 235V182H276V166H303V203H327V184H354V237Z" fill="#8c7184"/>
+    <path d="M456 242V189H483V171H512V209H541V187H561V247Z" fill="#8c7184"/>
+    <path d="M289 260V211H320V198H344V260Z" fill="#ba8b95"/>
+    <path d="M475 260V213H504V201H528V260Z" fill="#ba8b95"/>
+    <g fill="#f4c49b">
+      <path d="M298 220H304V230H298ZM315 220H321V230H315ZM487 222H493V232H487ZM510 217H516V227H510Z"/>
+    </g>
+
+    <path d="M22 282L353 266L398 326L126 578H22Z" fill="#aa7e81"/>
+    <path d="M460 266L778 276V578H674L407 326Z" fill="#b68a87"/>
+    <path d="M353 280H460L695 578H104Z" fill="#285d69"/>
+    <path d="M357 286H454L492 338Q406 324 316 338Z" fill="#417480"/>
+
+    <!-- Left-hand houses -->
+    <path d="M22 127L75 79L130 127V308H22Z" fill="#d79987"/>
+    <path d="M15 132L75 73L139 132L130 140L75 92L24 140Z" fill="#493e58"/>
+    <path d="M95 80V54H111V102Z" fill="#8f6571"/>
+    <path d="M92 52H114V59H92Z" fill="#b8807c"/>
+    <path d="M25 287H131V311H25Z" fill="#af7274"/>
+    <use href="#window" x="60" y="129"/>
+    <use href="#window" x="33" y="196"/>
+    <use href="#window" x="88" y="196"/>
+    <path d="M57 309V272Q57 251 75 251Q93 251 93 272V309Z" fill="#604958"/>
+    <path d="M74 267V307" stroke="#b27b76" stroke-width="2"/>
+    <circle cx="83" cy="285" r="2" fill="#efba82"/>
+
+    <path d="M131 164H218V303H131Z" fill="#e9b797"/>
+    <path d="M122 170L146 137H204L226 170Z" fill="#6b5266"/>
+    <path d="M142 175H208V181H142Z" fill="#d99c88"/>
+    <use href="#window" x="150" y="193"/>
+    <use href="#window" x="184" y="193"/>
+    <path d="M147 263H202V303H147Z" fill="#715669"/>
+    <path d="M143 252H207L215 266H135Z" fill="#52787b"/>
+    <path d="M151 252L147 266M167 252L166 266M184 252L185 266M199 252L204 266" stroke="#91a59a" stroke-width="7"/>
+    <path d="M174 270V301" stroke="#e6b18e" stroke-width="3"/>
+
+    <path d="M219 207L250 181L283 207V297H219Z" fill="#c88980"/>
+    <path d="M210 212L250 174L291 212H277L250 187L223 212Z" fill="#4c475f"/>
+    <use href="#window" x="238" y="214"/>
+    <path d="M240 297V266H261V297Z" fill="#775768"/>
+
+    <!-- Right-hand houses -->
+    <path d="M583 162H672V315H583Z" fill="#c9837d"/>
+    <path d="M571 168L594 125H650L683 168Z" fill="#4b425b"/>
+    <path d="M637 130V108H652V149Z" fill="#905e6b"/>
+    <use href="#window" x="599" y="187"/>
+    <use href="#window" x="636" y="187"/>
+    <path d="M605 315V268Q605 247 625 247Q645 247 645 268V315Z" fill="#654858"/>
+    <path d="M612 270H638V293H612Z" fill="#e7b18a"/>
+    <path d="M625 270V295" stroke="#654858" stroke-width="3"/>
+    <path d="M580 309H674V318H580Z" fill="#a46a70"/>
+
+    <path d="M676 125L728 93L780 125V332H676Z" fill="#e4ad90"/>
+    <path d="M667 132L728 85L791 131L782 143L728 103L678 143Z" fill="#665066"/>
+    <path d="M685 157H769M685 223H769" stroke="#c98c7e" stroke-width="5"/>
+    <use href="#window" x="696" y="172"/>
+    <use href="#window" x="739" y="172"/>
+    <use href="#window" x="696" y="244"/>
+    <use href="#window" x="739" y="244"/>
+    <path d="M680 314H778V337H680Z" fill="#c48c7c"/>
+
+    <!-- Cypress silhouettes and flowering shrubs -->
+    <path d="M544 292Q513 270 528 234Q517 211 537 185Q537 157 552 142Q573 167 567 189Q590 217 573 244Q589 279 558 292Z" fill="#365a60"/>
+    <path d="M550 211V302M551 260L566 240M550 245L538 227" fill="none" stroke="#284a55" stroke-width="4" stroke-linecap="round"/>
+    <path d="M271 283Q254 259 274 241Q266 219 285 205Q303 221 297 239Q318 263 299 284Z" fill="#416969"/>
+    <path d="M286 243V298" stroke="#31535c" stroke-width="4"/>
+
+    <!-- Arched footbridge -->
+    <path d="M246 289Q404 201 567 289L559 322H491Q407 262 325 322H254Z" fill="#d9a68d"/>
+    <path d="M246 289Q404 201 567 289" fill="none" stroke="#f1c7a4" stroke-width="10" stroke-linecap="round"/>
+    <path d="M325 322Q407 262 491 322" fill="none" stroke="#aa7880" stroke-width="9"/>
+    <path d="M267 273V247M291 263V237M317 253V228M344 246V221M372 241V216M400 239V214M428 240V215M456 244V219M484 251V226M511 260V235M538 273V248" stroke="#ecd0ad" stroke-width="5"/>
+    <path d="M260 247Q404 173 545 248" fill="none" stroke="#ecd0ad" stroke-width="6" stroke-linecap="round"/>
+    <path d="M275 296L288 289M302 284L315 278M487 281L500 287M519 294L532 301" stroke="#bd887d" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Sloping stone embankments -->
+    <path d="M252 314L325 314L131 578H66Z" fill="#775f70"/>
+    <path d="M491 314H559L739 578H675Z" fill="#806473"/>
+    <path d="M252 309L325 309L314 324H243Z" fill="#efc19f"/>
+    <path d="M251 312L313 316L110 578H81Z" fill="#e0b097"/>
+    <path d="M491 309H557L568 325H502Z" fill="#efc19f"/>
+    <path d="M501 316L553 313L723 578H695Z" fill="#e0b097"/>
+    <g stroke="#b98b86" stroke-width="3">
+      <path d="M228 343L287 349M199 382L258 390M168 424L225 433M135 469L190 479M98 520L150 531"/>
+      <path d="M527 351L581 345M558 391L608 385M591 435L638 428M628 482L670 475M665 530L701 524"/>
+    </g>
+
+    <!-- Soft, broken reflections -->
+    <g clip-path="url(#water)" fill="none" stroke-linecap="round">
+      <path d="M358 337H390M420 339H455M329 356H362M441 359H477" stroke="#64908d" stroke-width="4"/>
+      <path d="M336 384H372M349 395H378M287 438H345M303 450H328" stroke="#c59888" stroke-width="4"/>
+      <path d="M470 368H488M479 380H508M496 391H515" stroke="#b99184" stroke-width="4"/>
+      <path d="M201 507H247M180 537H219M589 536H636M563 561H604M407 452H453M364 486H403M244 561H307" stroke="#447c80" stroke-width="5"/>
+      <path d="M369 366H437M341 413H400M467 471H527M264 524H326M402 560H466" stroke="#1e505f" stroke-width="5"/>
+      <path d="M400 307H422M391 316H433M396 326H429" stroke="#d2ad91" stroke-width="3"/>
+    </g>
+
+    <!-- Paper boats -->
+    <ellipse cx="402" cy="380" rx="42" ry="6" fill="#214e5d"/>
+    <use href="#boat" transform="translate(402 365) scale(.67)"/>
+    <path d="M381 391H416M394 398H408" stroke="#83a29a" stroke-width="3" stroke-linecap="round"/>
+
+    <ellipse cx="286" cy="489" rx="65" ry="9" fill="#1f4b59"/>
+    <use href="#boat" transform="translate(286 462) rotate(-5)"/>
+    <path d="M260 505H298M274 514H309" stroke="#86a499" stroke-width="4" stroke-linecap="round"/>
+
+    <ellipse cx="524" cy="520" rx="71" ry="10" fill="#204e5c"/>
+    <use href="#boat" transform="translate(526 491) rotate(8) scale(1.12)"/>
+    <path d="M501 538H549M515 547H536" stroke="#91aaa0" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Lanterns drifting on small trays -->
+    <g transform="translate(476 418)">
+      <ellipse cy="10" rx="27" ry="6" fill="#a99379" opacity=".4"/>
+      <path d="M-22 0H22L15 8H-15Z" fill="#413e53"/>
+      <path d="M-12-29L1-34L13-28V0L0 5L-12 0Z" fill="#ffc47b"/>
+      <path d="M1-34L13-28V0L0 5Z" fill="#e49b65"/>
+      <path d="M-8-25L-1-27V-4L-8-6Z" fill="#ffe6a5"/>
+      <path d="M-13-29L0-35L14-29L1-23Z" fill="#ffdda0"/>
+    </g>
+    <path d="M463 437H490M469 447H485M472 457H481" stroke="#d0ae83" stroke-width="3" stroke-linecap="round"/>
+    <g transform="translate(370 540) scale(.85)">
+      <ellipse cy="10" rx="28" ry="6" fill="#a99379" opacity=".4"/>
+      <path d="M-22 0H22L15 8H-15Z" fill="#413e53"/>
+      <path d="M-12-29L1-34L13-28V0L0 5L-12 0Z" fill="#ffc47b"/>
+      <path d="M1-34L13-28V0L0 5Z" fill="#e49b65"/>
+      <path d="M-8-25L-1-27V-4L-8-6Z" fill="#ffe6a5"/>
+      <path d="M-13-29L0-35L14-29L1-23Z" fill="#ffdda0"/>
+    </g>
+    <path d="M359 557H383M365 566H376" stroke="#d0ae83" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- A warm string of hanging lights -->
+    <path d="M-5 39Q183 182 394 135Q603 89 809 44" fill="none" stroke="#2b344d" stroke-width="3"/>
+    <use href="#lantern" transform="translate(84 116) rotate(9)"/>
+    <use href="#lantern" transform="translate(185 153) rotate(-5)"/>
+    <use href="#lantern" transform="translate(295 171) rotate(4)"/>
+    <use href="#lantern" transform="translate(406 157) rotate(-6)"/>
+    <use href="#lantern" transform="translate(527 130) rotate(6)"/>
+    <use href="#lantern" transform="translate(652 103) rotate(-5)"/>
+    <use href="#lantern" transform="translate(751 82) rotate(8)"/>
+
+    <!-- Foreground gardens -->
+    <path d="M22 418Q46 384 72 420Q91 400 112 424Q124 442 104 459H22Z" fill="#365e62"/>
+    <path d="M22 443Q58 424 91 451L62 493H22Z" fill="#294d56"/>
+    <g fill="#df9b87">
+      <circle cx="44" cy="421" r="5"/>
+      <circle cx="67" cy="433" r="4"/>
+      <circle cx="89" cy="424" r="5"/>
+      <circle cx="35" cy="438" r="4"/>
+    </g>
+    <path d="M778 415Q759 383 738 407Q715 390 701 415Q680 423 699 447Q734 461 778 447Z" fill="#3d6668"/>
+    <path d="M735 461Q738 429 756 424Q769 434 767 457Q779 437 790 447V491H745Z" fill="#284e57"/>
+    <g fill="#e2a18a">
+      <circle cx="714" cy="424" r="4"/>
+      <circle cx="740" cy="414" r="5"/>
+      <circle cx="760" cy="409" r="4"/>
+    </g>
+    <path d="M22 551Q40 515 62 535Q70 504 91 514Q113 528 96 555Q127 539 143 560L145 585H22Z" fill="#254b54"/>
+    <path d="M651 579Q648 547 670 539Q686 546 684 567Q694 522 714 530Q730 541 715 569Q748 543 779 559V586Z" fill="#254b54"/>
+    <g fill="none" stroke="#537a73" stroke-width="3" stroke-linecap="round">
+      <path d="M57 578L47 545M76 580L85 529M702 580L710 545M729 579L756 565"/>
+    </g>
+  </g>
+  <rect x="22" y="22" width="756" height="556" rx="24" fill="none" stroke="#ead8bd" stroke-width="2"/>
+</svg>

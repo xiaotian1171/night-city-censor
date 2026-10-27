@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f6e9d4"/>
+  <rect x="15" y="15" width="770" height="570" rx="13" fill="#d7e4df"/>
+  <rect x="24" y="24" width="752" height="552" rx="8" fill="#f3e9d7"/>
+
+  <!-- Quiet sky after the rain -->
+  <path d="M24 24H776V381H24Z" fill="#d7e4df"/>
+  <circle cx="645" cy="110" r="42" fill="#f7ddaa"/>
+  <path d="M54 122c25-18 49-17 69-3 18-13 42-12 58 4M518 70c20-13 39-12 55 1 15-10 34-9 48 3" fill="none" stroke="#eef1e8" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Distant roofs -->
+  <path d="M24 283l70-47 67 43 68-56 82 57 68-43 76 45 83-65 80 62 80-42 78 48v133H24Z" fill="#9ab5af"/>
+  <path d="M24 334l75-37 79 39 83-47 76 43 86-39 83 43 79-41 87 36 104-36v122H24Z" fill="#789c99"/>
+
+  <!-- Library -->
+  <rect x="63" y="190" width="340" height="273" fill="#c97968"/>
+  <path d="M50 196l183-75 183 75v23H50Z" fill="#455e65"/>
+  <path d="M68 192l165-64 165 64" fill="none" stroke="#69817d" stroke-width="7"/>
+  <rect x="75" y="218" width="316" height="19" fill="#e6b598"/>
+  <rect x="76" y="237" width="314" height="6" fill="#965b59"/>
+  <rect x="80" y="255" width="304" height="10" fill="#e6b598"/>
+  <rect x="81" y="389" width="302" height="13" fill="#e6b598"/>
+  <rect x="77" y="451" width="312" height="12" fill="#455e65"/>
+
+  <!-- Upper library windows -->
+  <path d="M100 367v-69a34 34 0 0 1 68 0v69ZM198 367v-69a34 34 0 0 1 68 0v69ZM296 367v-69a34 34 0 0 1 68 0v69Z" fill="#f0d7a3" stroke="#f3c7a9" stroke-width="8"/>
+  <path d="M110 362v-63a24 24 0 0 1 48 0v63ZM208 362v-63a24 24 0 0 1 48 0v63ZM306 362v-63a24 24 0 0 1 48 0v63Z" fill="#506c70"/>
+  <path d="M134 275v87m98-87v87m98-87v87M110 324h48m50 0h48m50 0h48" stroke="#d4a986" stroke-width="5"/>
+
+  <!-- Books glowing in the ground-floor window -->
+  <rect x="91" y="407" width="112" height="44" rx="3" fill="#eec99b"/>
+  <rect x="98" y="413" width="98" height="31" fill="#516c6c"/>
+  <path d="M105 420v19m8-23v23m10-18v18m8-22v22m13-17v17m8-21v21m10-18v18m8-22v22m9-17v17m9-19v19" stroke="#e8aa80" stroke-width="6"/>
+  <path d="M98 440h98" stroke="#f4d5ab" stroke-width="4"/>
+
+  <!-- Library entrance -->
+  <path d="M232 463v-56a57 57 0 0 1 114 0v56Z" fill="#eec99b"/>
+  <path d="M242 463v-55a47 47 0 0 1 94 0v55Z" fill="#455e65"/>
+  <path d="M289 362v101M251 415h76" stroke="#d9af8a" stroke-width="5"/>
+  <circle cx="279" cy="437" r="3" fill="#f6d789"/>
+  <circle cx="299" cy="437" r="3" fill="#f6d789"/>
+
+  <!-- Hanging sign: an open book -->
+  <path d="M389 263h51v5h-51m46-3v61" fill="none" stroke="#455e65" stroke-width="5" stroke-linecap="round"/>
+  <rect x="417" y="309" width="53" height="47" rx="5" fill="#e6b598" stroke="#455e65" stroke-width="4"/>
+  <path d="M424 320q10-4 19 2v23q-9-6-19-2Zm19 2q9-6 19-2v23q-10-4-19 2Z" fill="#f7e9d3" stroke="#455e65" stroke-width="2"/>
+
+  <!-- Neighboring old buildings -->
+  <rect x="478" y="258" width="149" height="205" fill="#e6ae8d"/>
+  <path d="M469 261l84-47 84 47v17H469Z" fill="#506b70"/>
+  <rect x="490" y="280" width="125" height="8" fill="#f1d0ab"/>
+  <rect x="489" y="450" width="128" height="13" fill="#506b70"/>
+  <rect x="500" y="305" width="46" height="86" rx="23" fill="#f4d2a4"/>
+  <rect x="507" y="312" width="32" height="72" rx="16" fill="#527177"/>
+  <rect x="557" y="305" width="46" height="86" rx="23" fill="#f4d2a4"/>
+  <rect x="564" y="312" width="32" height="72" rx="16" fill="#527177"/>
+  <path d="M523 312v72m57-72v72m-73-34h32m25 0h32" stroke="#d7a486" stroke-width="4"/>
+  <rect x="510" y="411" width="85" height="39" rx="3" fill="#536e70"/>
+  <path d="M520 420h65m-65 11h65m-65 11h65" stroke="#e6b18d" stroke-width="5"/>
+
+  <rect x="647" y="216" width="129" height="247" fill="#789c99"/>
+  <path d="M638 220l73-54 65 47v23H638Z" fill="#405c65"/>
+  <rect x="656" y="238" width="120" height="9" fill="#a9c1ae"/>
+  <path d="M667 361v-87a35 35 0 0 1 70 0v87Z" fill="#eac397"/>
+  <path d="M676 354v-78a26 26 0 0 1 52 0v78Z" fill="#506b70"/>
+  <path d="M702 250v104m-26-42h52" stroke="#d7aa86" stroke-width="5"/>
+  <rect x="659" y="380" width="91" height="70" rx="4" fill="#e5b68e"/>
+  <rect x="668" y="388" width="73" height="54" fill="#526e70"/>
+  <path d="M704 388v54" stroke="#dfb18f" stroke-width="5"/>
+
+  <!-- Lamps, greenery, and the wet street -->
+  <path d="M38 463h738v113H24V463Z" fill="#657d80"/>
+  <path d="M24 463h752v17H24Z" fill="#b7aca0"/>
+  <path d="M24 480h752v8H24Z" fill="#455e65"/>
+  <path d="M45 496q75-13 143-2t143 0q75-10 140 1t136-1q79-10 169 3v12q-82-8-168 1t-140-1q-72-9-136 1t-144-2q-69-11-143 2Z" fill="#819a99"/>
+
+  <path d="M47 455V333m0 0h27" fill="none" stroke="#455e65" stroke-width="7" stroke-linecap="round"/>
+  <path d="M55 341l8-24h24l8 24-8 26H63Z" fill="#f3d69e" stroke="#455e65" stroke-width="5"/>
+  <path d="M75 319v47" stroke="#455e65" stroke-width="3"/>
+  <circle cx="75" cy="307" r="5" fill="#455e65"/>
+  <ellipse cx="73" cy="478" rx="25" ry="4" fill="#d4ba91"/>
+
+  <path d="M751 455V333m0 0h-27" fill="none" stroke="#455e65" stroke-width="7" stroke-linecap="round"/>
+  <path d="M743 341l-8-24h-24l-8 24 8 26h24Z" fill="#f3d69e" stroke="#455e65" stroke-width="5"/>
+  <path d="M723 319v47" stroke="#455e65" stroke-width="3"/>
+  <circle cx="723" cy="307" r="5" fill="#455e65"/>
+
+  <rect x="405" y="440" width="31" height="22" rx="4" fill="#ad735e"/>
+  <path d="M409 440h23l-3 17h-17Z" fill="#d19676"/>
+  <path d="M420 441v-45m0 35q-22-9-21-25m21 17q23-11 22-29m-22 15q-14-12-11-28m11 21q16-13 15-26" fill="none" stroke="#4d766b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M420 415q-19-23-28-13 1 15 28 13Zm0-10q17-26 28-16-1 16-28 16Zm0-18q-15-24-26-15 0 15 26 15Zm0-10q16-23 27-14-2 15-27 14Z" fill="#668f79"/>
+
+  <!-- Small amber reflections set into the rain-dark cobbles -->
+  <g fill="#f8d999">
+    <rect x="94" y="523" width="16" height="6" rx="3"/>
+    <rect x="122" y="523" width="5" height="6" rx="2"/>
+    <rect x="131" y="523" width="16" height="6" rx="3"/>
+    <rect x="151" y="523" width="5" height="6" rx="2"/>
+    <rect x="168" y="523" width="5" height="6" rx="2"/>
+    <rect x="177" y="523" width="5" height="6" rx="2"/>
+    <rect x="186" y="523" width="16" height="6" rx="3"/>
+    <rect x="214" y="523" width="5" height="6" rx="2"/>
+    <rect x="223" y="523" width="5" height="6" rx="2"/>
+    <rect x="232" y="523" width="5" height="6" rx="2"/>
+    <rect x="249" y="523" width="16" height="6" rx="3"/>
+
+    <rect x="297" y="523" width="16" height="6" rx="3"/>
+    <rect x="317" y="523" width="5" height="6" rx="2"/>
+    <rect x="334" y="523" width="16" height="6" rx="3"/>
+    <rect x="354" y="523" width="16" height="6" rx="3"/>
+    <rect x="374" y="523" width="16" height="6" rx="3"/>
+
+    <rect x="422" y="523" width="5" height="6" rx="2"/>
+    <rect x="431" y="523" width="5" height="6" rx="2"/>
+    <rect x="440" y="523" width="5" height="6" rx="2"/>
+    <rect x="457" y="523" width="5" height="6" rx="2"/>
+    <rect x="466" y="523" width="5" height="6" rx="2"/>
+    <rect x="475" y="523" width="5" height="6" rx="2"/>
+    <rect x="484" y="523" width="5" height="6" rx="2"/>
+    <rect x="501" y="523" width="5" height="6" rx="2"/>
+    <rect x="510" y="523" width="16" height="6" rx="3"/>
+    <rect x="538" y="523" width="16" height="6" rx="3"/>
+    <rect x="558" y="523" width="5" height="6" rx="2"/>
+    <rect x="567" y="523" width="5" height="6" rx="2"/>
+    <rect x="584" y="523" width="16" height="6" rx="3"/>
+    <rect x="604" y="523" width="16" height="6" rx="3"/>
+    <rect x="624" y="523" width="16" height="6" rx="3"/>
+    <rect x="652" y="523" width="5" height="6" rx="2"/>
+    <rect x="661" y="523" width="16" height="6" rx="3"/>
+    <rect x="681" y="523" width="16" height="6" rx="3"/>
+    <rect x="701" y="523" width="5" height="6" rx="2"/>
+  </g>
+
+  <path d="M42 548h106m37 0h93m35 0h120m40 0h103m36 0h142M63 563h72m38 0h121m44 0h89m43 0h114m35 0h112" fill="none" stroke="#526b70" stroke-width="2" stroke-linecap="round"/>
+  <rect x="24" y="24" width="752" height="552" rx="8" fill="none" stroke="#f9f1df" stroke-width="5"/>
+</svg>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜城审查官 · Night City Censor</title>
+<meta name="description" content="图片里藏了秘密？你和 AI 审查官比比谁眼尖。A steganography game powered by Pollinations LLMs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b1026'/><path d='M8 22h16M12 22V12l4-4 4 4v10' stroke='%236ee7f9' stroke-width='2.4' fill='none'/><circle cx='16' cy='13' r='2.2' fill='%23ff6ec7'/></svg>">
+</head>
+<body>
+<div class="bg-fx" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="2" y="2" width="44" height="44" rx="11" fill="#0e1633" stroke="#2b3b77"/>
+      <path d="M12 34h24M17 34V20l7-8 7 8v14" stroke="#6ee7f9" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <circle cx="24" cy="21" r="3.4" fill="#ff6ec7"/>
+      <path d="M24 27v3" stroke="#ffd166" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1 data-t="app.title">夜城审查官</h1>
+      <p class="tagline" data-t="app.tagline">图里藏了什么，眼睛说了算</p>
+    </div>
+  </div>
+  <div class="top-right">
+    <div id="connPill" class="pill pill-off"><span class="dot"></span><span id="connText">未连接</span></div>
+    <button id="btnSettings" class="icon-btn" title="Settings">⚙</button>
+    <button id="btnHelp" class="icon-btn" title="How to play">?</button>
+    <button id="btnLang" class="icon-btn" title="Language">EN</button>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab active" data-view="desk" role="tab"><span data-t="nav.desk">审查台</span></button>
+  <button class="tab" data-view="smuggle" role="tab"><span data-t="nav.smuggle">走私台</span></button>
+  <button class="tab" data-view="gallery" role="tab"><span data-t="nav.gallery">标本馆</span></button>
+</nav>
+
+<main>
+  <!-- ================= 审查台 ================= -->
+  <section id="view-desk" class="view">
+    <div class="setup">
+      <div class="source-row" id="sourceRow">
+        <label class="source-card">
+          <input type="radio" name="roundSource" value="archive" checked>
+          <div class="source-body">
+            <div class="source-head"><b data-t="desk.archive">档案局</b><span class="badge free" data-t="misc.freeTag">免费</span></div>
+            <p data-t="desk.archiveDesc"></p>
+          </div>
+        </label>
+        <label class="source-card">
+          <input type="radio" name="roundSource" value="live">
+          <div class="source-body">
+            <div class="source-head"><b data-t="desk.live">现场局</b><span class="badge live" data-t="misc.liveTag">需连接</span></div>
+            <p data-t="desk.liveDesc"></p>
+          </div>
+        </label>
+        <label class="source-card">
+          <input type="radio" name="roundSource" value="mech">
+          <div class="source-body">
+            <div class="source-head"><b data-t="desk.mech">机关局</b><span class="badge free" data-t="misc.freeTag">免费</span></div>
+            <p data-t="desk.mechDesc"></p>
+          </div>
+        </label>
+      </div>
+
+      <div class="chip-row">
+        <div class="chip-group" id="hiderGroup">
+          <span class="chip-label" data-t="desk.hider">走私客</span>
+          <button class="chip active" data-hider="astra"><span data-t="desk.hiderAstra"></span></button>
+          <button class="chip" data-hider="sol"><span data-t="desk.hiderSol"></span></button>
+        </div>
+        <div class="chip-group" id="censorGroup">
+          <span class="chip-label" data-t="desk.censor">AI 审查官</span>
+          <button class="chip active" data-censor="luna"><span data-t="desk.censorLuna"></span></button>
+          <button class="chip" data-censor="sol"><span data-t="desk.censorSol"></span></button>
+          <button class="chip" data-censor="astra"><span data-t="desk.censorAstra"></span></button>
+        </div>
+        <div class="cost-chip"><span data-t="desk.cost"></span> <b id="costHint">0（免费）</b></div>
+        <button id="btnStart" class="btn primary big"><span data-t="desk.start">开始本局</span></button>
+      </div>
+    </div>
+
+    <div id="roundBar" class="round-bar hidden">
+      <div id="roundStatus" class="round-status"></div>
+      <button id="btnLock" class="btn primary hidden"><span data-t="desk.lockAll"></span></button>
+    </div>
+
+    <div id="roundGrid" class="card-grid"></div>
+  </section>
+
+  <!-- ================= 走私台 ================= -->
+  <section id="view-smuggle" class="view" hidden>
+    <div class="smuggle-wrap">
+      <div class="panel">
+        <h2 data-t="smug.title">走私台</h2>
+        <p class="muted" data-t="smug.desc"></p>
+        <label class="field">
+          <span data-t="smug.msgLabel"></span>
+          <input id="smugMsg" maxlength="24" data-t-ph="smug.msgPh" autocomplete="off">
+          <small id="smugMsgHint" class="muted"></small>
+        </label>
+        <label class="field" id="smugSceneField">
+          <span data-t="smug.sceneLabel"></span>
+          <input id="smugScene" maxlength="60" data-t-ph="smug.scenePh" autocomplete="off">
+        </label>
+        <div class="field">
+          <span data-t="smug.scheme"></span>
+          <div class="scheme-row" id="schemeRow">
+            <button class="chip active" data-scheme="astra"><span data-t="smug.schemeAstra"></span></button>
+            <button class="chip" data-scheme="sol"><span data-t="smug.schemeSol"></span></button>
+            <button class="chip" data-scheme="sky"><span data-t="smug.schemeSky"></span></button>
+            <button class="chip" data-scheme="fence"><span data-t="smug.schemeFence"></span></button>
+          </div>
+        </div>
+        <button id="btnSmugGen" class="btn primary big"><span data-t="smug.generate"></span></button>
+      </div>
+      <div class="panel grow">
+        <div id="smugTerminal" class="terminal hidden"></div>
+        <div id="smugResult" class="smuggle-result">
+          <div class="poster empty-poster" id="smugPoster"><span class="ghost">?</span></div>
+          <div id="smugShare" class="share-box hidden">
+            <label class="field">
+              <span data-t="smug.share"></span>
+              <div class="share-line">
+                <input id="smugLink" readonly>
+                <button id="btnCopyLink" class="btn"><span data-t="smug.copyLink"></span></button>
+              </div>
+            </label>
+            <button id="btnOpenReceiver" class="btn"><span data-t="smug.openReceiver"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 标本馆 ================= -->
+  <section id="view-gallery" class="view" hidden>
+    <h2 data-t="gallery.families">藏法图鉴</h2>
+    <p class="muted" data-t="gallery.tipRuler"></p>
+    <div id="famGrid" class="fam-grid"></div>
+
+    <h2 data-t="gallery.specimens">AI 标本</h2>
+    <p class="muted" data-t="gallery.specimensHint"></p>
+    <div id="specGrid" class="card-grid"></div>
+
+    <h2 data-t="gallery.morseTable">摩斯码表</h2>
+    <div id="morseTable" class="morse-table"></div>
+
+    <h2 data-t="gallery.about">关于</h2>
+    <p class="muted about" data-t="gallery.aboutText"></p>
+    <p class="muted about">Pollinations · gen.pollinations.ai · BYOP</p>
+  </section>
+
+  <!-- ================= 收件人视角 ================= -->
+  <section id="view-receiver" class="view" hidden>
+    <div class="banner" data-t="smug.receivedBanner"></div>
+    <div class="receiver-wrap">
+      <div class="poster panel" id="rcvPoster"></div>
+      <div class="panel grow">
+        <div class="tool-bar">
+          <button class="btn tool" data-tool="probe" data-t="desk.probe"></button>
+          <button class="btn tool" data-tool="grid" data-t="desk.grid"></button>
+        </div>
+        <div class="muted small" data-t="desk.pinHint"></div>
+        <div class="pins-box">
+          <div class="pins-head"><b data-t="desk.pinned"></b><button class="btn tiny" data-clearpins="rcv" data-t="desk.clearPins"></button></div>
+          <div class="pins" id="rcvPins"></div>
+        </div>
+        <label class="field">
+          <span data-t="smug.tryDecode"></span>
+          <div class="share-line">
+            <input id="rcvInput" autocomplete="off">
+            <button id="btnRcvCheck" class="btn primary"><span data-t="smug.check"></span></button>
+            <button id="btnRcvGiveUp" class="btn"><span data-t="smug.giveUp"></span></button>
+          </div>
+        </label>
+        <div id="rcvFeedback" class="feedback"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= 焦点卡对话框 ================= -->
+<dialog id="dlgFocus" class="dlg wide">
+  <div class="focus-wrap">
+    <div class="focus-stage">
+      <div class="poster" id="focusPoster"></div>
+      <div class="tool-bar">
+        <button class="btn tool" data-tool="probe" data-t="desk.probe"></button>
+        <button class="btn tool" data-tool="grid" data-t="desk.grid"></button>
+        <span class="spacer"></span>
+        <button class="btn tiny" id="btnPrevCard" data-t="misc.prev"></button>
+        <button class="btn tiny" id="btnNextCard" data-t="misc.next"></button>
+        <button class="btn tiny" id="btnCloseFocus" data-t="misc.close"></button>
+      </div>
+    </div>
+    <div class="focus-side">
+      <h3 id="focusTitle"></h3>
+      <div class="muted small" data-t="desk.pinHint"></div>
+      <div class="pins-box">
+        <div class="pins-head"><b data-t="desk.pinned"></b><button class="btn tiny" data-clearpins="focus" data-t="desk.clearPins"></button></div>
+        <div class="pins" id="focusPins"></div>
+      </div>
+      <label class="field">
+        <span data-t="desk.notes"></span>
+        <textarea id="focusNotes" rows="3"></textarea>
+      </label>
+      <div class="field" id="verdictBox">
+        <span data-t="desk.verdict"></span>
+        <div class="verdict-row">
+          <button class="btn verdict" data-verdict="clean"><span data-t="desk.verdictClean"></span></button>
+          <button class="btn verdict" data-verdict="hidden"><span data-t="desk.verdictHidden"></span></button>
+        </div>
+        <input id="focusDecode" class="decode-input hidden" data-t-ph="desk.decodeLabel" autocomplete="off">
+      </div>
+      <div id="focusReveal" class="reveal-box hidden"></div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ================= 战报对话框 ================= -->
+<dialog id="dlgScore" class="dlg">
+  <h3 data-t="score.title"></h3>
+  <div id="scoreBody" class="score-body"></div>
+  <div class="dlg-actions">
+    <button id="btnCopyScore" class="btn"><span data-t="score.copy"></span></button>
+    <button id="btnScoreAgain" class="btn primary"><span data-t="score.again"></span></button>
+    <button class="btn" data-close-dlg="dlgScore"><span data-t="misc.close"></span></button>
+  </div>
+</dialog>
+
+<!-- ================= 设置 ================= -->
+<dialog id="dlgSettings" class="dlg">
+  <h3 data-t="misc.settings"></h3>
+  <div class="field">
+    <span>BYOP</span>
+    <div id="polliMount">
+      <polli-connect id="polliConnect" app-key="" budget="5" expiry="86400"></polli-connect>
+    </div>
+    <p class="muted small" data-t="misc.byop"></p>
+  </div>
+  <div class="field">
+    <span data-t="conn.manual"></span>
+    <div class="share-line">
+      <input id="keyInput" type="password" data-t-ph="misc.keyPlaceholder" autocomplete="off">
+      <button id="btnSaveKey" class="btn primary"><span data-t="misc.save"></span></button>
+      <button id="btnClearKey" class="btn"><span data-t="misc.clear"></span></button>
+    </div>
+  </div>
+  <div class="field">
+    <button id="btnTestKey" class="btn"><span data-t="conn.test"></span></button>
+    <div id="keyTestResult" class="muted small"></div>
+  </div>
+  <div class="dlg-actions">
+    <button class="btn" data-close-dlg="dlgSettings"><span data-t="misc.close"></span></button>
+  </div>
+</dialog>
+
+<!-- ================= 玩法 ================= -->
+<dialog id="dlgHelp" class="dlg">
+  <h3 data-t="help.title"></h3>
+  <ol class="help-list">
+    <li data-t="help.1"></li>
+    <li data-t="help.2"></li>
+    <li data-t="help.3"></li>
+    <li data-t="help.4"></li>
+  </ol>
+  <div class="dlg-actions">
+    <button class="btn primary" data-close-dlg="dlgHelp"><span data-t="misc.close"></span></button>
+  </div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@pollinations/ui@0.1.0-alpha.19/dist/connect.js" defer></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

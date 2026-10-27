@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#eee4ce"/>
+  <rect x="18" y="18" width="764" height="564" rx="18" fill="#fff5df"/>
+  <rect x="30" y="30" width="740" height="420" rx="10" fill="#666f91"/>
+
+  <path d="M30 173H770V336H30Z" fill="#bd8797"/>
+  <path d="M30 253H770V351H30Z" fill="#e4aa9f"/>
+  <circle cx="593" cy="131" r="38" fill="#ffe8b5"/>
+  <path d="M477 184H567" stroke="#f4c8b5" stroke-width="8" stroke-linecap="round"/>
+  <path d="M636 218H713M656 232H735" stroke="#f4c8b5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M322 119Q333 109 344 119Q355 109 366 119M410 154Q418 147 426 154Q434 147 442 154" fill="none" stroke="#515e78" stroke-width="3" stroke-linecap="round"/>
+
+  <text x="62" y="82" fill="#fff1d6" font-family="Georgia, serif" font-size="23" letter-spacing="4">DUSK AT THE POINT</text>
+  <text x="64" y="106" fill="#eee1d1" font-family="sans-serif" font-size="10" letter-spacing="3">SALT AIR · LAST LIGHT · QUIET SHORES</text>
+
+  <path d="M30 310Q139 296 257 311T487 311T770 304V458H30Z" fill="#467b89"/>
+  <path d="M30 350Q157 337 293 352T556 348T770 345V458H30Z" fill="#376b79"/>
+  <path d="M397 331H462M492 323H560M603 342H697M333 371H418M474 361H531M623 386H743" fill="none" stroke="#83a6a5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M552 356H630M575 371H607M584 388H601" fill="none" stroke="#ddb89f" stroke-width="3" stroke-linecap="round"/>
+
+  <path d="M654 290V330" stroke="#f6e9cb" stroke-width="2"/>
+  <path d="M650 293L628 320H650Z" fill="#f8e7c6"/>
+  <path d="M658 303L673 320H658Z" fill="#dbb8aa"/>
+  <path d="M625 325H676L667 333H637Z" fill="#294f61"/>
+
+  <path d="M208 200L511 233L511 287L208 219Z" fill="#f7d99d"/>
+  <path d="M208 205L430 237L430 264L208 215Z" fill="#ffe9b3"/>
+
+  <path d="M30 405L91 370L136 365L176 338L224 352L270 384L315 401L329 450H30Z" fill="#344f60"/>
+  <path d="M30 402L91 370L138 368L174 348L225 360L260 386L189 383L142 397L87 395L30 423Z" fill="#6c8278"/>
+  <path d="M102 402L141 379L171 384L150 417Z" fill="#263f51"/>
+  <path d="M231 393L260 397L286 421L244 417Z" fill="#263f51"/>
+
+  <path d="M181 224H231L247 369H165Z" fill="#fff0d3"/>
+  <path d="M181 224H194L185 369H165Z" fill="#e4ceb3"/>
+  <path d="M177 264H235L239 291H174Z" fill="#c66459"/>
+  <path d="M170 326H243L246 353H167Z" fill="#c66459"/>
+  <path d="M202 347Q211 339 220 347V369H202Z" fill="#344f60"/>
+  <rect x="202" y="236" width="10" height="17" rx="5" fill="#344f60"/>
+  <rect x="202" y="303" width="10" height="17" rx="5" fill="#344f60"/>
+  <path d="M175 221H237V229H175Z" fill="#344f60"/>
+  <rect x="184" y="191" width="44" height="29" fill="#ffe5a5"/>
+  <path d="M184 191V220M198 191V220M214 191V220M228 191V220" stroke="#344f60" stroke-width="4"/>
+  <path d="M177 191L206 169L235 191Z" fill="#b95050"/>
+  <path d="M175 191H237" stroke="#344f60" stroke-width="5" stroke-linecap="round"/>
+  <path d="M206 170V159" stroke="#344f60" stroke-width="3" stroke-linecap="round"/>
+  <path d="M173 211V224M239 211V224M173 213H239" fill="none" stroke="#344f60" stroke-width="3"/>
+  <path d="M197 371Q237 387 256 411T317 445" fill="none" stroke="#e7ceab" stroke-width="9"/>
+
+  <path d="M30 447Q134 418 249 435T473 429T770 408V560H30Z" fill="#e8c59f"/>
+  <path d="M30 446Q134 420 249 438T473 432T770 411" fill="none" stroke="#f9e9cb" stroke-width="8"/>
+  <path d="M30 471Q160 442 298 465T558 459T770 443V560H30Z" fill="#f2d8b2"/>
+  <path d="M73 487Q207 476 322 487M451 489Q586 473 725 483" fill="none" stroke="#dfba92" stroke-width="2" stroke-linecap="round"/>
+
+  <ellipse cx="106" cy="450" rx="16" ry="9" fill="#728b89"/>
+  <path d="M93 447Q101 439 112 445" fill="none" stroke="#a5b4a5" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="134" cy="462" rx="10" ry="6" fill="#bf887b"/>
+  <ellipse cx="355" cy="459" rx="19" ry="11" fill="#858593"/>
+  <path d="M343 456Q353 450 365 456" fill="none" stroke="#bab0b0" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="389" cy="470" rx="9" ry="6" fill="#b18075"/>
+  <ellipse cx="682" cy="461" rx="17" ry="10" fill="#678787"/>
+  <ellipse cx="713" cy="470" rx="10" ry="7" fill="#c59480"/>
+
+  <path d="M58 436Q61 415 54 398M59 427Q70 409 74 411M58 423Q47 410 44 412" fill="none" stroke="#6b7c69" stroke-width="3" stroke-linecap="round"/>
+  <path d="M745 445Q742 421 751 404M745 435Q734 415 728 418M746 429Q757 418 761 420" fill="none" stroke="#6b7c69" stroke-width="3" stroke-linecap="round"/>
+
+  <g fill="#344f60">
+    <rect x="60" y="522" width="22" height="8" rx="4"/>
+    <circle cx="91" cy="526" r="4"/>
+    <circle cx="104" cy="526" r="4"/>
+    <circle cx="117" cy="526" r="4"/>
+
+    <circle cx="142" cy="526" r="4"/>
+    <rect x="151" y="522" width="22" height="8" rx="4"/>
+    <circle cx="182" cy="526" r="4"/>
+
+    <circle cx="207" cy="526" r="4"/>
+    <circle cx="220" cy="526" r="4"/>
+
+    <rect x="241" y="522" width="22" height="8" rx="4"/>
+    <circle cx="272" cy="526" r="4"/>
+
+    <rect x="293" y="522" width="22" height="8" rx="4"/>
+    <rect x="320" y="522" width="22" height="8" rx="4"/>
+    <circle cx="351" cy="526" r="4"/>
+
+    <rect x="395" y="522" width="22" height="8" rx="4"/>
+
+    <circle cx="438" cy="526" r="4"/>
+    <circle cx="451" cy="526" r="4"/>
+    <circle cx="464" cy="526" r="4"/>
+    <circle cx="477" cy="526" r="4"/>
+
+    <circle cx="502" cy="526" r="4"/>
+
+    <rect x="546" y="522" width="22" height="8" rx="4"/>
+    <circle cx="577" cy="526" r="4"/>
+    <rect x="586" y="522" width="22" height="8" rx="4"/>
+
+    <circle cx="629" cy="526" r="4"/>
+
+    <rect x="650" y="522" width="22" height="8" rx="4"/>
+    <circle cx="681" cy="526" r="4"/>
+    <rect x="690" y="522" width="22" height="8" rx="4"/>
+    <rect x="717" y="522" width="22" height="8" rx="4"/>
+  </g>
+
+  <text x="400" y="565" text-anchor="middle" fill="#7b776c" font-family="Georgia, serif" font-size="12" font-style="italic" letter-spacing="1.5">The shore keeps its own small signals.</text>
+</svg>

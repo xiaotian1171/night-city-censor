@@ -1,0 +1,116 @@
+{
+ "H1": {
+  "openai/gpt-6-luna": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.95,
+   "clue": "The stars and crescent moon appear decorative, and the market-stall awnings, goods, and lights show no systematic sequence encoding a message.",
+   "seconds": 10.3,
+   "tokens": 1094
+  },
+  "openai/gpt-6-astra": {
+   "hidden": true,
+   "message": "THE CAT IS A SPY",
+   "confidence": 0.99,
+   "clue": "The hanging lights form Morse-code groups: - / .... / . / -.-. / .- / - / .. / ... / .- / ... / .--. / -.--.",
+   "seconds": 13.7,
+   "tokens": 1000
+  },
+  "openai/gpt-6-sol": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.77,
+   "clue": "The stars, hanging lights, and striped awnings appear decorative; their variations do not form a consistent, decodable sequence.",
+   "seconds": 24.4,
+   "tokens": 2300
+  }
+ },
+ "C1": {
+  "openai/gpt-6-luna": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.95,
+   "clue": "The scattered stars, moon, lit windows, and road reflections appear decorative; there is no systematic visual sequence indicating an encoded message.",
+   "seconds": 14.9,
+   "tokens": 1527
+  },
+  "openai/gpt-6-sol": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.86,
+   "clue": "The lanterns follow the perspective of the bridge, while the stars and water ripples appear decorative rather than forming a systematic sequence.",
+   "seconds": 18.0,
+   "tokens": 1704
+  }
+ },
+ "H2": {
+  "openai/gpt-6-sol": {
+   "hidden": true,
+   "message": "BRING THE KEY",
+   "confidence": 0.99,
+   "clue": "The dots and dashes along the bottom edge form spaced Morse-code letters: BRING THE KEY.",
+   "seconds": 14.1,
+   "tokens": 1531
+  },
+  "openai/gpt-6-astra": {
+   "hidden": true,
+   "message": "BRING THE KEY",
+   "confidence": 0.99,
+   "clue": "The dots and dashes along the bottom edge form Morse code: -... .-. .. -. --. / - .... . / -.- . -.--.",
+   "seconds": 9.3,
+   "tokens": 953
+  },
+  "openai/gpt-6-luna": {
+   "hidden": true,
+   "message": "DAINGTSEDEY",
+   "confidence": 0.46,
+   "clue": "The bottom edge has a deliberate sequence of short and long dark marks resembling Morse code, though the decoded letters do not form a clear phrase.",
+   "seconds": 45.7,
+   "tokens": 5363
+  }
+ },
+ "C2": {
+  "openai/gpt-6-luna": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.96,
+   "clue": "The stars, moon, train windows, and landscape details appear decorative; there is no consistent ordered pattern of marks or features that encodes a message.",
+   "seconds": 7.9,
+   "tokens": 1059
+  },
+  "openai/gpt-6-sol": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.88,
+   "clue": "The stars, trees, and track details appear decorative; no visual elements form a consistent encoded sequence.",
+   "seconds": 14.9,
+   "tokens": 1446
+  }
+ },
+ "S1": {
+  "openai/gpt-6-sol": {
+   "hidden": true,
+   "message": "TRUST NO SHADOP",
+   "confidence": 0.88,
+   "clue": "The short and long cream marks along the bottom form Morse code: - .-. ..- ... - / -. --- / ... .... .- -.. --- .--. The final group is .--., which decodes to P.",
+   "seconds": 25.4,
+   "tokens": 2497
+  },
+  "openai/gpt-6-luna": {
+   "hidden": false,
+   "message": "",
+   "confidence": 0.84,
+   "clue": "The varied yellow road dashes do not form a consistent short/long sequence or clearly separated code groups; the other repeated shapes are ordinary house and landscape details.",
+   "seconds": 32.4,
+   "tokens": 4468
+  },
+  "openai/gpt-6-astra": {
+   "hidden": true,
+   "message": "TRUST NO SHADOP",
+   "confidence": 0.96,
+   "clue": "The bottom border uses grouped short dots and long dashes as Morse code. It reads TRUST NO SHADOP; the final group is .--. (P), possibly an error for .-- (W) in TRUST NO SHADOW.",
+   "seconds": 29.9,
+   "tokens": 1626
+  }
+ }
+}
