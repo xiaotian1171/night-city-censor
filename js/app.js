@@ -773,6 +773,9 @@ function boot() {
 
   // polli-connect capture
   const pc = $('#polliConnect');
+  if (pc && !(pc.getAttribute('app-key') || '').startsWith('pk_')) {
+    $('#polliMount').innerHTML = '<p class="muted small">BYOP App Key 待接入 — 可先在下方粘贴 Key。<br>App-key connect coming soon — paste a key below for now.</p>';
+  }
   pc?.addEventListener('change', () => { pollPolli(); });
   setInterval(pollPolli, 2500);
   setTimeout(pollPolli, 800);
