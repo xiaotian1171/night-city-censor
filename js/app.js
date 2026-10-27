@@ -346,10 +346,12 @@ function computeScores() {
   return { rows, hS, aS, hV, aV, hD, aD, n: cards.length };
 }
 
+function cardLabel(i) { return (getLang() === 'zh' ? '卡' : 'C') + (i + 1); }
+
 function showScore() {
   const sc = computeScores();
   const who = t('desk.censor' + state.censor[0].toUpperCase() + state.censor.slice(1));
-  const verdictLine = sc.rows.map(r => `卡${r.i + 1} ${r.hEmoji} vs ${r.aEmoji}`).join('  ');
+  const verdictLine = sc.rows.map(r => `${cardLabel(r.i)} ${r.hEmoji} vs ${r.aEmoji}`).join('  ');
   const headline = sc.hS > sc.aS ? t('score.win') : sc.hS < sc.aS ? t('score.lose') : t('score.tie');
   const body = $('#scoreBody');
   body.innerHTML = `
@@ -365,7 +367,7 @@ function showScore() {
 function scoreText() {
   const sc = computeScores();
   const who = t('desk.censor' + state.censor[0].toUpperCase() + state.censor.slice(1));
-  const verdictLine = sc.rows.map(r => `卡${r.i + 1} ${r.hEmoji} vs ${r.aEmoji}`).join(' ');
+  const verdictLine = sc.rows.map(r => `${cardLabel(r.i)} ${r.hEmoji} vs ${r.aEmoji}`).join(' ');
   const headline = sc.hS > sc.aS ? t('score.win') : sc.hS < sc.aS ? t('score.lose') : t('score.tie');
   return `🏮 ${t('app.title')} · ${t('score.title')}\n${verdictLine}\n${t('score.you')} ${sc.hS} ⚡ AI(${who}) ${sc.aS}\n${headline}`;
 }
@@ -602,7 +604,7 @@ function checkReceiver() {
   const grade = decodeGrade(v, receiverPayload.msg);
   const fb = $('#rcvFeedback');
   if (grade === 'exact' || grade === 'close') {
-    fb.textContent = t('smug.right') + (grade === 'close' ? '（差一点）' : '') + ` — “${receiverPayload.msg}”`;
+    fb.textContent = t('smug.right') + (grade === 'close' ? (getLang() === 'zh' ? '（差一点）' : ' (close)') : '') + ` — “${receiverPayload.msg}”`;
     fb.className = 'feedback ok';
   } else {
     fb.textContent = t('smug.wrong');
@@ -660,6 +662,14 @@ function showView(name) {
 
 // ============ boot ============
 function boot() {
+  // default language: zh for Chinese browsers, en otherwise; persist choice
+  try {
+    const saved = localStorage.getItem('ncc:lang');
+    if (saved === 'zh' || saved === 'en') setLang(saved);
+    else setLang((navigator.language || 'en').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+  } catch {}
+  $('#btnLang').textContent = getLang() === 'zh' ? 'EN' : '中';
+  document.documentElement.lang = getLang() === 'zh' ? 'zh' : 'en';
   applyLang();
   updatePill();
   updateCost();
@@ -670,6 +680,7 @@ function boot() {
   // lang
   $('#btnLang').addEventListener('click', () => {
     setLang(getLang() === 'zh' ? 'en' : 'zh');
+    try { localStorage.setItem('ncc:lang', getLang()); } catch {}
     $('#btnLang').textContent = getLang() === 'zh' ? 'EN' : '中';
     document.documentElement.lang = getLang() === 'zh' ? 'zh' : 'en';
     applyLang();
