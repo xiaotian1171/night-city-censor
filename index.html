@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>夜城审查官 · Night City Censor</title>
-<meta name="description" content="图片里藏了秘密？你和 AI 审查官比比谁眼尖。A steganography game powered by Pollinations LLMs.">
+<title>Night City Censor — a steganography game</title>
+<meta name="description" content="Postcards hide secrets in plain sight — out-scan an AI censor. A steganography game powered by Pollinations LLMs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
@@ -23,47 +23,46 @@
       <path d="M24 27v3" stroke="#ffd166" stroke-width="2.2" stroke-linecap="round"/>
     </svg>
     <div>
-      <h1 data-t="app.title">夜城审查官</h1>
-      <p class="tagline" data-t="app.tagline">图里藏了什么，眼睛说了算</p>
+      <h1 data-t="app.title">Night City Censor</h1>
+      <p class="tagline" data-t="app.tagline">The pixels decide what is hidden</p>
     </div>
   </div>
   <div class="top-right">
-    <div id="connPill" class="pill pill-off"><span class="dot"></span><span id="connText">未连接</span></div>
+    <div id="connPill" class="pill pill-off"><span class="dot"></span><span id="connText">Not connected</span></div>
     <button id="btnSettings" class="icon-btn" title="Settings">⚙</button>
     <button id="btnHelp" class="icon-btn" title="How to play">?</button>
-    <button id="btnLang" class="icon-btn" title="Language">EN</button>
   </div>
 </header>
 
 <nav class="tabs" role="tablist">
-  <button class="tab active" data-view="desk" role="tab"><span data-t="nav.desk">审查台</span></button>
-  <button class="tab" data-view="smuggle" role="tab"><span data-t="nav.smuggle">走私台</span></button>
-  <button class="tab" data-view="gallery" role="tab"><span data-t="nav.gallery">标本馆</span></button>
+  <button class="tab active" data-view="desk" role="tab"><span data-t="nav.desk">Censor Desk</span></button>
+  <button class="tab" data-view="smuggle" role="tab"><span data-t="nav.smuggle">Smuggler Desk</span></button>
+  <button class="tab" data-view="gallery" role="tab"><span data-t="nav.gallery">Specimen Hall</span></button>
 </nav>
 
 <main>
-  <!-- ================= 审查台 ================= -->
+  <!-- ================= CENSOR DESK ================= -->
   <section id="view-desk" class="view">
     <div class="setup">
       <div class="source-row" id="sourceRow">
         <label class="source-card">
           <input type="radio" name="roundSource" value="archive" checked>
           <div class="source-body">
-            <div class="source-head"><b data-t="desk.archive">档案局</b><span class="badge free" data-t="misc.freeTag">免费</span></div>
+            <div class="source-head"><b data-t="desk.archive">Archive round</b><span class="badge free" data-t="misc.freeTag">FREE</span></div>
             <p data-t="desk.archiveDesc"></p>
           </div>
         </label>
         <label class="source-card">
           <input type="radio" name="roundSource" value="live">
           <div class="source-body">
-            <div class="source-head"><b data-t="desk.live">现场局</b><span class="badge live" data-t="misc.liveTag">需连接</span></div>
+            <div class="source-head"><b data-t="desk.live">Live round</b><span class="badge live" data-t="misc.liveTag">NEEDS KEY</span></div>
             <p data-t="desk.liveDesc"></p>
           </div>
         </label>
         <label class="source-card">
           <input type="radio" name="roundSource" value="mech">
           <div class="source-body">
-            <div class="source-head"><b data-t="desk.mech">机关局</b><span class="badge free" data-t="misc.freeTag">免费</span></div>
+            <div class="source-head"><b data-t="desk.mech">Blueprint round</b><span class="badge free" data-t="misc.freeTag">FREE</span></div>
             <p data-t="desk.mechDesc"></p>
           </div>
         </label>
@@ -71,18 +70,18 @@
 
       <div class="chip-row">
         <div class="chip-group" id="hiderGroup">
-          <span class="chip-label" data-t="desk.hider">走私客</span>
+          <span class="chip-label" data-t="desk.hider">Smuggler</span>
           <button class="chip active" data-hider="astra"><span data-t="desk.hiderAstra"></span></button>
           <button class="chip" data-hider="sol"><span data-t="desk.hiderSol"></span></button>
         </div>
         <div class="chip-group" id="censorGroup">
-          <span class="chip-label" data-t="desk.censor">AI 审查官</span>
+          <span class="chip-label" data-t="desk.censor">AI censor</span>
           <button class="chip active" data-censor="luna"><span data-t="desk.censorLuna"></span></button>
           <button class="chip" data-censor="sol"><span data-t="desk.censorSol"></span></button>
           <button class="chip" data-censor="astra"><span data-t="desk.censorAstra"></span></button>
         </div>
-        <div class="cost-chip"><span data-t="desk.cost"></span> <b id="costHint">0（免费）</b></div>
-        <button id="btnStart" class="btn primary big"><span data-t="desk.start">开始本局</span></button>
+        <div class="cost-chip"><span data-t="desk.cost"></span> <b id="costHint">0 (free)</b></div>
+        <button id="btnStart" class="btn primary big"><span data-t="desk.start">Start round</span></button>
       </div>
     </div>
 
@@ -94,11 +93,11 @@
     <div id="roundGrid" class="card-grid"></div>
   </section>
 
-  <!-- ================= 走私台 ================= -->
+  <!-- ================= SMUGGLER DESK ================= -->
   <section id="view-smuggle" class="view" hidden>
     <div class="smuggle-wrap">
       <div class="panel">
-        <h2 data-t="smug.title">走私台</h2>
+        <h2 data-t="smug.title">Smuggler desk</h2>
         <p class="muted" data-t="smug.desc"></p>
         <label class="field">
           <span data-t="smug.msgLabel"></span>
@@ -139,25 +138,25 @@
     </div>
   </section>
 
-  <!-- ================= 标本馆 ================= -->
+  <!-- ================= SPECIMEN HALL ================= -->
   <section id="view-gallery" class="view" hidden>
-    <h2 data-t="gallery.families">藏法图鉴</h2>
+    <h2 data-t="gallery.families">Encoding families</h2>
     <p class="muted" data-t="gallery.tipRuler"></p>
     <div id="famGrid" class="fam-grid"></div>
 
-    <h2 data-t="gallery.specimens">AI 标本</h2>
+    <h2 data-t="gallery.specimens">AI specimens</h2>
     <p class="muted" data-t="gallery.specimensHint"></p>
     <div id="specGrid" class="card-grid"></div>
 
-    <h2 data-t="gallery.morseTable">摩斯码表</h2>
+    <h2 data-t="gallery.morseTable">Morse table</h2>
     <div id="morseTable" class="morse-table"></div>
 
-    <h2 data-t="gallery.about">关于</h2>
+    <h2 data-t="gallery.about">About</h2>
     <p class="muted about" data-t="gallery.aboutText"></p>
     <p class="muted about">Pollinations · gen.pollinations.ai · BYOP</p>
   </section>
 
-  <!-- ================= 收件人视角 ================= -->
+  <!-- ================= RECEIVER VIEW ================= -->
   <section id="view-receiver" class="view" hidden>
     <div class="banner" data-t="smug.receivedBanner"></div>
     <div class="receiver-wrap">
@@ -186,7 +185,7 @@
   </section>
 </main>
 
-<!-- ================= 焦点卡对话框 ================= -->
+<!-- ================= FOCUS DIALOG ================= -->
 <dialog id="dlgFocus" class="dlg wide">
   <div class="focus-wrap">
     <div class="focus-stage">
@@ -224,7 +223,7 @@
   </div>
 </dialog>
 
-<!-- ================= 战报对话框 ================= -->
+<!-- ================= SCORECARD DIALOG ================= -->
 <dialog id="dlgScore" class="dlg">
   <h3 data-t="score.title"></h3>
   <div id="scoreBody" class="score-body"></div>
@@ -235,7 +234,7 @@
   </div>
 </dialog>
 
-<!-- ================= 设置 ================= -->
+<!-- ================= SETTINGS ================= -->
 <dialog id="dlgSettings" class="dlg">
   <h3 data-t="misc.settings"></h3>
   <div class="field">
@@ -262,7 +261,7 @@
   </div>
 </dialog>
 
-<!-- ================= 玩法 ================= -->
+<!-- ================= HOW TO PLAY ================= -->
 <dialog id="dlgHelp" class="dlg">
   <h3 data-t="help.title"></h3>
   <ol class="help-list">

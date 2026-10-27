@@ -1,5 +1,5 @@
 // app.js — Night City Censor
-import { t, setLang, getLang, applyLang } from './i18n.js';
+import { t, setLang, applyLang } from './i18n.js';
 import * as S from './stego.js';
 import * as AI from './ai.js';
 import { ARCHIVE, archiveRound, specimenCards } from './archive.js';
@@ -271,11 +271,11 @@ function revealHtml(card) {
   const famName = t('fam.' + (card.familyKey === 'morse' ? 'morse' : card.familyKey));
   let html = '';
   if (card.hidden) {
-    html += `<div>${t('desk.truthHidden')}：</div><div class="truth">“${card.message}”</div>`;
+    html += `<div>${t('desk.truthHidden')}: </div><div class="truth">"${card.message}"</div>`;
     if (card.messageDrawn && S.normalizeAnswer(card.messageDrawn) !== S.normalizeAnswer(card.message)) {
-      html += `<div class="small muted">${t('desk.drawnAs')}：“${card.messageDrawn}”</div>`;
+      html += `<div class="small muted">${t('desk.drawnAs')}: "${card.messageDrawn}"</div>`;
     }
-    html += `<div>${t('desk.family')}：<b>${famName}</b> — ${t('fam.' + card.familyKey + 'Desc')}</div>`;
+    html += `<div>${t('desk.family')}: <b>${famName}</b> — ${t('fam.' + card.familyKey + 'Desc')}</div>`;
   } else {
     html += `<div>${t('desk.truthClean')}</div><div>${t('fam.cleanDesc')}</div>`;
   }
@@ -285,7 +285,7 @@ function revealHtml(card) {
     html += `<div class="ai-line">${t('desk.aiScore')} · ${who} · ${seek.hidden ? t('desk.aiSaidHidden') : t('desk.aiSaidClean')}` +
       (seek.message ? ` · ${t('desk.aiDecode')}: ${seek.message}` : '') +
       (seek.seconds ? ` · ${seek.seconds}s` : '') + '</div>';
-    if (seek.clue) html += `<div class="ai-line">“${seek.clue}”</div>`;
+    if (seek.clue) html += `<div class="ai-line">"${seek.clue}"</div>`;
   } else if (state.round.source === 'mech' && card.hidden) {
     html += `<div class="ai-line">${t('desk.mechFact')}</div>`;
   }
@@ -346,7 +346,7 @@ function computeScores() {
   return { rows, hS, aS, hV, aV, hD, aD, n: cards.length };
 }
 
-function cardLabel(i) { return (getLang() === 'zh' ? '卡' : 'C') + (i + 1); }
+function cardLabel(i) { return 'C' + (i + 1); }
 
 function showScore() {
   const sc = computeScores();
@@ -604,7 +604,7 @@ function checkReceiver() {
   const grade = decodeGrade(v, receiverPayload.msg);
   const fb = $('#rcvFeedback');
   if (grade === 'exact' || grade === 'close') {
-    fb.textContent = t('smug.right') + (grade === 'close' ? (getLang() === 'zh' ? '（差一点）' : ' (close)') : '') + ` — “${receiverPayload.msg}”`;
+    fb.textContent = t('smug.right') + (grade === 'close' ? ' (close)' : '') + ` — "${receiverPayload.msg}"`;
     fb.className = 'feedback ok';
   } else {
     fb.textContent = t('smug.wrong');
@@ -634,9 +634,9 @@ function renderGallery() {
     front.innerHTML = card.svg;
     const back = el('div', 'spec-face back');
     back.innerHTML = `<b>${card.hidden ? t('desk.hidden') : t('desk.clean')}</b>
-      <div class="truth">“${card.message || '—'}”</div>
-      <div>${t('desk.family')}：${t('fam.' + card.familyKey)}</div>
-      <div class="muted small">${t('desk.hiderLabel')}：${card.model}</div>
+      <div class="truth">"${card.message || '—'}"</div>
+      <div>${t('desk.family')}: ${t('fam.' + card.familyKey)}</div>
+      <div class="muted small">${t('desk.hiderLabel')}: ${card.model}</div>
       ${Object.entries(card.seeks).map(([k, v]) => `<div class="muted small">AI ${k}: ${v.hidden ? '🕵️ ' + (v.message || '?') : '😇 clean'}</div>`).join('')}`;
     inner.appendChild(front); inner.appendChild(back);
     wrap.appendChild(inner);
@@ -662,14 +662,7 @@ function showView(name) {
 
 // ============ boot ============
 function boot() {
-  // default language: zh for Chinese browsers, en otherwise; persist choice
-  try {
-    const saved = localStorage.getItem('ncc:lang');
-    if (saved === 'zh' || saved === 'en') setLang(saved);
-    else setLang((navigator.language || 'en').toLowerCase().startsWith('zh') ? 'zh' : 'en');
-  } catch {}
-  $('#btnLang').textContent = getLang() === 'zh' ? 'EN' : '中';
-  document.documentElement.lang = getLang() === 'zh' ? 'zh' : 'en';
+  setLang('en');
   applyLang();
   updatePill();
   updateCost();
@@ -677,17 +670,7 @@ function boot() {
   // tabs
   $$('.tab').forEach(tb => tb.addEventListener('click', () => showView(tb.dataset.view)));
 
-  // lang
-  $('#btnLang').addEventListener('click', () => {
-    setLang(getLang() === 'zh' ? 'en' : 'zh');
-    try { localStorage.setItem('ncc:lang', getLang()); } catch {}
-    $('#btnLang').textContent = getLang() === 'zh' ? 'EN' : '中';
-    document.documentElement.lang = getLang() === 'zh' ? 'zh' : 'en';
-    applyLang();
-    updatePill(); updateCost();
-    renderGallery();
-    if (state.round) { renderRound(); if (state.round.cards.some(c => c.revealed)) renderRoundBar(t('desk.replayRecord'), false); }
-  });
+  // lang fixed to English
 
   // source radios
   $$('input[name="roundSource"]').forEach(r => r.addEventListener('change', () => { state.source = r.value; updateCost(); }));
@@ -785,7 +768,7 @@ function boot() {
   // polli-connect capture
   const pc = $('#polliConnect');
   if (pc && !(pc.getAttribute('app-key') || '').startsWith('pk_')) {
-    $('#polliMount').innerHTML = '<p class="muted small">BYOP App Key 待接入 — 可先在下方粘贴 Key。<br>App-key connect coming soon — paste a key below for now.</p>';
+    $('#polliMount').innerHTML = '<p class="muted small">App-key connect coming soon — paste a key below for now.</p>';
   }
   pc?.addEventListener('change', () => { pollPolli(); });
   setInterval(pollPolli, 2500);
@@ -805,7 +788,7 @@ function boot() {
   $('#btnRcvCheck').addEventListener('click', checkReceiver);
   $('#btnRcvGiveUp').addEventListener('click', () => {
     const fb = $('#rcvFeedback');
-    fb.textContent = '“' + (receiverPayload?.msg || '?') + '”';
+    fb.textContent = '"' + (receiverPayload?.msg || '?') + '"';
     fb.className = 'feedback ok';
   });
   $$('#view-receiver [data-tool]').forEach(b => b.addEventListener('click', () => {
