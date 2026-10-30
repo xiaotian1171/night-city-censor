@@ -1,5 +1,7 @@
 # 🌃 Night City Censor
 
+[![Made with pollinations.ai](https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg)](https://pollinations.ai/?ref=badge)
+
 **A steganography game where you out-scan an AI censor.**
 Postcards arrive at your night-city desk — some carry a smuggler's hidden message in
 plain sight, some are clean. Measure, count, decode, judge. Then the AI censor judges
